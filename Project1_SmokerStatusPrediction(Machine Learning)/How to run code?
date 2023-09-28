@@ -1,0 +1,12 @@
+Install Anaconda
+Open anaconda propmt
+Then install these libraries:
+-pip install pandas
+-pip install sklearn
+-pip install matpoltlib(Required for stock predction project)
+-pip install django
+-pip install opencv-python
+Go to the directory where manage.py file is present
+Then give this commend:
+-python manage.py runserver
+IP Address will come copy and paste it in any browser
