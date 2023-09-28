@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoker Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Foldit&family=Gajraj+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: #000000 ;
+    }
+    h2 {
+        font-family: 'Foldit', cursive;
+        font-size: 65px;
+        margin-bottom: 5px;
+    }
+    table tr td {
+        color: aliceblue;
+        font-family: 'Handjet', cursive;
+        font-size: 30px;
+    }
+    table tr td button{
+        color: black;
+        font-family: 'DynaPuff', cursive;
+        font-size: 25px;
+        border: 5px solid gray;
+        border-radius: 15px;
+    }
+    table tr td button:hover{
+        color: white;
+        background-color: #000000;
+        font-family: 'DynaPuff', cursive;
+        font-size: 25px;
+        border: 4px solid white;
+        border-radius: 15px;
+    }
+    input[type="text"] {
+        border: 3px solid gray;
+        border-radius: 15px;
+        width: 5rem;
+        font-weight: bold;
+    }
+    #res td{
+        display: block;
+        font-family: 'Gajraj One', cursive;
+    }
+</style>
+<body>
+    <center><h2>SMOKER - STATUS - PREDICTION</h2></center>
+    <center><form method="POST">
+        {%csrf_token%}
+        <table>
+            <tr>
+                <td>
+                    Enter the Age :
+                </td>
+                <td>
+                    <input type="text" name="age">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Height(cm) :
+                </td>
+                <td>
+                    <input type="text" name="height">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Weight(Kgs) :
+                </td>
+                <td>
+                    <input type="text" name="weight">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Waist(cm) :
+                </td>
+                <td>
+                    <input type="text" name="waist">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Eye Sight(Left) :
+                </td>
+                <td>
+                    <input type="text" name="eyeleft">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Eye Sight(Right) :
+                </td>
+                <td>
+                    <input type="text" name="eyeright">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Hearing Left (1-YES | 2-NO) :
+                </td>
+                <td>
+                    <input type="text" name="hearleft">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Hearing Right (1-YES | 2-NO) :
+                </td>
+                <td>
+                    <input type="text" name="hearright">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Systolic :
+                </td>
+                <td>
+                    <input type="text" name="systolic">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Relaxation :
+                </td>
+                <td>
+                    <input type="text" name="relaxation">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Fasting Blood Sugar:
+                </td>
+                <td>
+                    <input type="text" name="fbs">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Cholesterol :
+                </td>
+                <td>
+                    <input type="text" name="cholesterol">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Triglyceride :
+                </td>
+                <td>
+                    <input type="text" name="triglyceride">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the HDL(Cholesterol Type) :
+                </td>
+                <td>
+                    <input type="text" name="hdl">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the LDL(Cholesterol Type) :
+                </td>
+                <td>
+                    <input type="text" name="ldl">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Hemoglobin :
+                </td>
+                <td>
+                    <input type="text" name="hemoglobin">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Urine Protein :
+                </td>
+                <td>
+                    <input type="text" name="uprotein">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Serum Creatinine :
+                </td>
+                <td>
+                    <input type="text" name="serum">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the AST(Glutamic Oxaloacetic Transaminase Type) :
+                </td>
+                <td>
+                    <input type="text" name="ast">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the ALT(Glutamic Oxaloacetic Transaminase Type) :
+                </td>
+                <td>
+                    <input type="text" name="alt">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the GTP :
+                </td>
+                <td>
+                    <input type="text" name="gtp">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Dental Caries(0-NO | 1-YES) :
+                </td>
+                <td>
+                    <input type="text" name="dental">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" name="prdct">Predict</button>
+                </td>
+            </tr>
+            <tr id="res" colspan="2">
+                <td>
+                        {{result}}
+                </td>
+            </tr>
+        </table>
+    </form></center>
+</body>
+</html>
